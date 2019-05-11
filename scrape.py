@@ -28,8 +28,6 @@ def title_to_freq(title, word_to_ix):
 
 if __name__ == "__main__":
 
-
-
     # load the word-to-ix dictionary
     with open("word_to_ix.json") as word_to_ix_db:
         # create a dict to map ids to class
@@ -37,7 +35,7 @@ if __name__ == "__main__":
     
 
     # get 10000 hot posts from the MachineLearning subreddit
-    hot_posts = reddit.subreddit('all').hot(limit=500)
+    hot_posts = reddit.subreddit('all').hot(limit=10000)
     # posts = [i for i in hot_posts]
     # print(len(posts))
 
@@ -49,6 +47,7 @@ if __name__ == "__main__":
     y_test_scrape = {}
 
     freq_to_score = {}
+    counter = 0
     for post in hot_posts:
         up = post.ups
         title = ''.join([i for i in post.title if i.isalpha() or i == ' '])
@@ -56,10 +55,11 @@ if __name__ == "__main__":
         freq_lst = title_to_freq(title, word_to_ix)
         if type(freq_lst) != type(None):
             freq_to_score[str(tuple(freq_lst))] = up
+        print(counter)
+        counter +=1
 
 
     with open('all_scrape_data.json', 'w') as f:
         json.dump(freq_to_score, f)
 
 
-    # convert the word to 
