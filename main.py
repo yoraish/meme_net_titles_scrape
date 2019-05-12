@@ -76,6 +76,8 @@ def train():
     # ++++++++++++++++++
     num_inputs = len(x_train[0])
     num_outputs = 3
+    batch_size = 10
+    epochs = 40
     # ++++++++++++++++++
 
 
@@ -89,14 +91,15 @@ def train():
     model.add(Dense(8, activation='sigmoid'))
     model.add(Dropout(0.1))
     model.add(Dense(num_outputs, activation='sigmoid'))
+    model.add(Dense(num_outputs, activation='sigmoid'))
 
     opt_rms = RMSprop(lr=0.001,decay=1e-6)
 
     model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-    history = model.fit(x_train, y_train, epochs=1000, batch_size=400)
+    history = model.fit(x_train, y_train, epochs=epochs, batch_size=batch_size)
 
-    loss, accuracy = model.evaluate(x_train, y_train, verbose=False)
-    print("Training Accuracy: {:.4f}".format(accuracy))
+    loss, accuracy_train = model.evaluate(x_train, y_train, verbose=False)
+    print("Training Accuracy: {:.4f}".format(accuracy_train))
     loss, accuracy = model.evaluate(x_test, y_test, verbose=False)
     print("Testing Accuracy:  {:.4f}".format(accuracy))
 
@@ -106,6 +109,12 @@ def train():
     # evaluate the model
     scores = model.evaluate(x_test, y_test)
     print("\n%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
+        
+    model_name = 'scrape_0'
+    with open('HIST.txt', 'a+') as spec_file:
+        spec_file.write("\nName= " + model_name + " | acc train = " + str(accuracy_train) + " | acc test = " + str(scores[1]*100) + "% | loss test = " + str(scores[0]) + " | num. epochs= " + str(epochs) + " | batch size= " + str(batch_size) + "| memes? " + 'title' + '\n')
+
+
 
 if __name__ == "__main__":
     train()

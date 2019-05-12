@@ -1,0 +1,32 @@
+
+Name= scrape_0 | acc test = 41.07142847681802 | loss test = 4.805072841190157 | batch size= 100| memes? title
+
+Name= scrape_0 | acc test = 40.67460326921372% | loss test = 2.0378089670151 | num. epochs= 100 | batch size= 100| memes? title
+
+Name= scrape_0 | acc test = 44.24603174603175% | loss test = 2.0983361251770503 | num. epochs= 50 | batch size= 100| memes? title
+
+Name= scrape_0 | acc test = 43.055555650166106% | loss test = 1.3476906882392035 | num. epochs= 30 | batch size= 100| memes? title
+
+Name= scrape_0 | acc test = 42.85714280983758% | loss test = 1.1766233122538006 | num. epochs= 20 | batch size= 100| memes? title
+
+Name= scrape_0 | acc test = 46.82539692000737% | loss test = 0.9939880333249531 | num. epochs= 35 | batch size= 100| memes? title
+
+Name= scrape_0 | acc test = 40.47619057080102% | loss test = 1.396720925020793 | num. epochs= 35 | batch size= 100| memes? title
+
+Name= scrape_0 | acc test = 45.83333342794388% | loss test = 0.9915016227298312 | num. epochs= 35 | batch size= 100| memes? title
+
+Name= scrape_0 | acc test = 41.4682539209487% | loss test = 1.1023951532348755 | num. epochs= 35 | batch size= 100| memes? title
+
+Name= scrape_0 | acc test = 45.23809523809524% | loss test = 1.0347360306315951 | num. epochs= 35 | batch size= 100| memes? title
+
+Name= scrape_0 | acc train = 0.5895337301587301 | acc test = 42.46031741301219% | loss test = 1.0894534408100067 | num. epochs= 35 | batch size= 100| memes? title
+
+Name= scrape_0 | acc train = 0.7800099206349206 | acc test = 42.65873015873016% | loss test = 1.2156861301452395 | num. epochs= 35 | batch size= 100| memes? title
+
+Name= scrape_0 | acc train = 0.5580357142857143 | acc test = 42.857142857142854% | loss test = 1.0621612213906788 | num. epochs= 35 | batch size= 100| memes? title
+
+Name= scrape_0 | acc train = 0.47346230158730157 | acc test = 45.23809523809524% | loss test = 1.067286559513637 | num. epochs= 60 | batch size= 100| memes? title
+
+Name= scrape_0 | acc train = 0.8268849206349206 | acc test = 45.63492072953118% | loss test = 1.453569960026514 | num. epochs= 60 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.7614087301587301 | acc test = 43.45238099968623% | loss test = 1.4574338727527194 | num. epochs= 40 | batch size= 10| memes? title
