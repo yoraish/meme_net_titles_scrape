@@ -30,3 +30,61 @@ Name= scrape_0 | acc train = 0.47346230158730157 | acc test = 45.23809523809524%
 Name= scrape_0 | acc train = 0.8268849206349206 | acc test = 45.63492072953118% | loss test = 1.453569960026514 | num. epochs= 60 | batch size= 10| memes? title
 
 Name= scrape_0 | acc train = 0.7614087301587301 | acc test = 43.45238099968623% | loss test = 1.4574338727527194 | num. epochs= 40 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.6101190476190477 | acc test = 41.86507936507937% | loss test = 1.1868075794643826 | num. epochs= 40 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.7936507936507936 | acc test = 41.66666661936139% | loss test = 1.3338464952650524 | num. epochs= 40 | batch size= 140| memes? title
+
+Name= scrape_0 | acc train = 0.745247148342299 | acc test = 45.61717358812663% | loss test = 1.3784118140106338 | num. epochs= 40 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.8326996198251887 | acc test = 44.72271915731788% | loss test = 1.8340909080130043 | num. epochs= 40 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.967964824120603 | acc test = 42.80936453852765% | loss test = 2.2931902990692037 | num. epochs= 40 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.8850502512562815 | acc test = 42.47491643779653% | loss test = 2.2885254139086872 | num. epochs= 40 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.9891122278056952 | acc test = 39.130434782608695% | loss test = 3.1739065663072976 | num. epochs= 100 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.553391959798995 | acc test = 45.98662197390528% | loss test = 1.0205559024842688 | num. epochs= 10 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.5600921273031826 | acc test = 46.655518294975515% | loss test = 1.0475340467631618 | num. epochs= 15 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.8228643216080402 | acc test = 44.81605351170568% | loss test = 1.6536120355727282 | num. epochs= 25 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.751465661641541 | acc test = 48.327759157455084% | loss test = 1.2141277499023488 | num. epochs= 25 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.5125628140703518 | acc test = 49.49832773926266% | loss test = 0.9787869758430532 | num. epochs= 25 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.5816582914572864 | acc test = 45.4849497331026% | loss test = 1.0924821386369177 | num. epochs= 25 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.6530569514237856 | acc test = 42.64214052803141% | loss test = 1.2316960772144356 | num. epochs= 25 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.791038525963149 | acc test = 43.812709079936994% | loss test = 1.4974388390480475 | num. epochs= 25 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.5919179229480737 | acc test = 46.6555183547795% | loss test = 1.1067655134360528 | num. epochs= 25 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.5125628140703518 | acc test = 49.49832773926266% | loss test = 0.9887583907631329 | num. epochs= 25 | batch size= 100| memes? title
+
+Name= scrape_0 | acc train = 0.5755862646566164 | acc test = 45.98662197390528% | loss test = 1.058987489512134 | num. epochs= 40 | batch size= 100| memes? title
+
+Name= scrape_0 | acc train = 0.5125628140703518 | acc test = 49.49832773926266% | loss test = 0.9786093747336729 | num. epochs= 40 | batch size= 100| memes? title
+
+Name= scrape_0 | acc train = 0.5125628140703518 | acc test = 49.49832773926266% | loss test = 0.9786106234410136 | num. epochs= 40 | batch size= 100| memes? title
+
+Name= scrape_0 | acc train = 0.5125628140703518 | acc test = 49.49832773926266% | loss test = 0.9786519228814039 | num. epochs= 40 | batch size= 100| memes? title
+
+Name= scrape_0 | acc train = 0.5125628140703518 | acc test = 49.49832773926266% | loss test = 0.9786201819129612 | num. epochs= 40 | batch size= 32| memes? title
+
+Name= scrape_0 | acc train = 0.5125628140703518 | acc test = 49.49832773926266% | loss test = 0.9790744791461472 | num. epochs= 40 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.585427135678392 | acc test = 46.989966455510626% | loss test = 1.094372883289554 | num. epochs= 40 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.5778894472361809 | acc test = 44.481605311301244% | loss test = 1.0926876825632459 | num. epochs= 25 | batch size= 10| memes? title
+
+Name= scrape_0 | acc train = 0.6961892797319933 | acc test = 43.64548500963677% | loss test = 1.208145793863762 | num. epochs= 25 | batch size= 16| memes? title
+
+Name= scrape_0 | acc train = 0.7914572864321608 | acc test = 45.1505016722408% | loss test = 1.4415411159745029 | num. epochs= 35 | batch size= 16| memes? title
+
+Name= scrape_0 | acc train = 0.5071189279731994 | acc test = 49.163879578727546% | loss test = 1.0534499867704001 | num. epochs= 35 | batch size= 128| memes? title
+
+Name= scrape_0 | acc train = 0.8092546063651591 | acc test = 47.993311026821964% | loss test = 1.4700669010347347 | num. epochs= 35 | batch size= 10| memes? title

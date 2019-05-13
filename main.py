@@ -6,19 +6,22 @@ import cv2
 from PIL import Image
 import os
 import json
+from keras.utils import plot_model
+
 
 from keras.optimizers import RMSprop
 from keras.models import Sequential
-from keras.layers import Dense, Dropout
+from keras.layers import Dense, Dropout, Conv1D, Flatten
 import numpy
 
 # fix random seed for reproducibility
-
+import keras
 from keras.models import Sequential
 from keras.layers import Dense
 plt.style.use('ggplot')
 
 def plot_history(history):
+    print('in history')
     acc = history.history['acc']
     val_acc = history.history['val_acc']
     loss = history.history['loss']
@@ -36,6 +39,7 @@ def plot_history(history):
     plt.plot(x, val_loss, 'r', label='Validation loss')
     plt.title('Training and validation loss')
     plt.legend()
+    plt.show()
 
 def train():
     # load the data
@@ -67,52 +71,101 @@ def train():
     y_train = np.array(y_train)
     y_test = np.array(y_test)
     # sanity check
-    print(len(x_train))
-    print(len(x_test))
+    print('the length of x_train = ', len(x_train))
+    print('the length of x_test = ', len(x_test))
 
     # print(x_train[1000], y_train[1000])
 
 
+
     # ++++++++++++++++++
-    num_inputs = len(x_train[0])
     num_outputs = 3
     batch_size = 10
-    epochs = 40
+    epochs = 16
+    word_vector_length = len(x_train[0])
+    print('the lengthof the vocab world verctor = ', word_vector_length)
     # ++++++++++++++++++
 
 
     # create model
-    model = Sequential()
-    model.add(Dense(32, input_dim=542, activation='relu'))
-    model.add(Dense(32, input_dim=542, activation='relu'))
-    model.add(Dropout(0.1))
-    model.add(Dense(16, activation='relu'))
-    model.add(Dropout(0.1))
-    model.add(Dense(8, activation='sigmoid'))
-    model.add(Dropout(0.1))
-    model.add(Dense(num_outputs, activation='sigmoid'))
-    model.add(Dense(num_outputs, activation='sigmoid'))
 
-    opt_rms = RMSprop(lr=0.001,decay=1e-6)
+
+
+
+
+
+    # '''
+    model = Sequential()
+    model.add(Dense(word_vector_length, input_dim=word_vector_length, activation='relu'))
+    model.add(Dropout(0.5))
+    # model.add(Dense(word_vector_length, activation='relu'))
+    # model.add(Dropout(0.2))
+    # model.add(Dense(1280, activation='sigmoid'))
+    model.add(Dense(128, activation='softmax'))
+    model.add(Dense(num_outputs, activation='softmax'))
+
 
     model.compile(loss='sparse_categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-    history = model.fit(x_train, y_train, epochs=epochs, batch_size=batch_size)
+    history = model.fit(x_train, y_train, epochs=epochs, batch_size=batch_size, verbose = 1,  validation_data=(x_test, y_test))
 
-    loss, accuracy_train = model.evaluate(x_train, y_train, verbose=False)
-    print("Training Accuracy: {:.4f}".format(accuracy_train))
-    loss, accuracy = model.evaluate(x_test, y_test, verbose=False)
-    print("Testing Accuracy:  {:.4f}".format(accuracy))
+    # loss, accuracy_train = model.evaluate(x_train, y_train, verbose=False)
+    # print("Training Accuracy: {:.4f}".format(accuracy_train))
+    # loss, accuracy = model.evaluate(x_test, y_test, verbose=False)
+    # print("Testing Accuracy:  {:.4f}".format(accuracy))
+
+    plot_history(history)
+    plot_model(model, to_file='model.png')
+
+
+
+    # evaluate the model
+    # scores = model.evaluate(x_test, y_test)
+    # print("\n%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
+        
+    # model_name = 'scrape_0'
+    # with open('HIST.txt', 'a+') as spec_file:
+    #     spec_file.write("\nName= " + model_name + " | acc train = " + str(accuracy_train) + " | acc test = " + str(scores[1]*100) + "% | loss test = " + str(scores[0]) + " | num. epochs= " + str(epochs) + " | batch size= " + str(batch_size) + "| memes? " + 'title' + '\n')
+
+
+    # '''
+
+    # Convert class vectors to binary class matrices. This uses 1 hot encoding.
+
+    # y_train_binary = keras.utils.to_categorical(y_train, num_outputs)
+    # y_test_binary = keras.utils.to_categorical(y_test, num_outputs)
+
+    # x_train = x_train.reshape(len(x_train), len(x_train[0]),1)
+    # x_test = x_test.reshape(len(x_test), len(x_test[0]),1)
+
+    # model = Sequential()
+    # model.add(Conv1D(32, (3), input_shape=(word_vector_length,1), activation='relu' ))
+    # model.add(Flatten())
+    # model.add(Dense(64, activation='softmax'))
+    # model.add(Dense(128, activation='sigmoid'))
+
+    # model.add(Dense(num_outputs, activation='softmax'))
+
+    # model.compile(loss=keras.losses.categorical_crossentropy,
+    #             optimizer='adam',
+    #             metrics=['accuracy'])
+
+    # model.summary()
+
+    # batch_size = 128
+    # epochs = 10
+    # history = model.fit(x_train, y_train_binary,
+    #         batch_size=batch_size,
+    #         epochs=epochs,
+    #         verbose=1,
+    #         validation_data=(x_test, y_test_binary))
 
     # plot_history(history)
 
 
-    # evaluate the model
-    scores = model.evaluate(x_test, y_test)
-    print("\n%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
-        
-    model_name = 'scrape_0'
-    with open('HIST.txt', 'a+') as spec_file:
-        spec_file.write("\nName= " + model_name + " | acc train = " + str(accuracy_train) + " | acc test = " + str(scores[1]*100) + "% | loss test = " + str(scores[0]) + " | num. epochs= " + str(epochs) + " | batch size= " + str(batch_size) + "| memes? " + 'title' + '\n')
+
+
+
+
 
 
 

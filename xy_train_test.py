@@ -11,7 +11,7 @@ def vis(dict, heading):
     plt.figure(0)
     lst = sorted([i for i in dict.values()])
 
-    plotting_bins=np.arange(0,30,1) # need to add an extra bin when plotting 
+    plotting_bins=np.arange(-2,30,1) # need to add an extra bin when plotting 
     plt.hist(lst, bins=plotting_bins)
     plt.title(heading)
     plt.show()
@@ -30,10 +30,14 @@ def generate_groups(all_scrape_data,word_to_ix):
     counter = 0
 
     for freq_lst, score in all_scrape_data.items():
-        score = round(log(score,10.2))-2
-        if score > 2:
-            score = 2
+        if score != 0:
+            score = round(log(score,12))-1
 
+            if score > 1:
+                score = 1
+            if score < 0:
+                score = 0
+            
         if counter % 9 == 0:
             test_data[freq_lst] = score
             # x_test_scrape.append(freq_lst)
@@ -58,8 +62,10 @@ if __name__ == "__main__":
     with open("word_to_ix.json") as word_to_ix_db:
         # create a dict to map ids to class
         word_to_ix = json.load(word_to_ix_db)
+
     with open("all_scrape_data.json") as all_scrape_data_db:
         # create a dict to map ids to class
         all_scrape_data = json.load(all_scrape_data_db)
     
+    print('length of the all_scrape_data dict = ', len(all_scrape_data))
     generate_groups(all_scrape_data, word_to_ix)

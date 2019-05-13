@@ -15,7 +15,7 @@ def title_to_freq(title, word_to_ix):
     out = np.array([0]*len(word_to_ix))
     for word in words:
         if word in word_to_ix:
-            out[word_to_ix[word]] += 1
+            out[word_to_ix[word]] += 1 
     else:
         # print(word, "not in dict")
         pass
@@ -28,14 +28,17 @@ def title_to_freq(title, word_to_ix):
 
 if __name__ == "__main__":
 
+
+
     # load the word-to-ix dictionary
     with open("word_to_ix.json") as word_to_ix_db:
         # create a dict to map ids to class
         word_to_ix = json.load(word_to_ix_db)
+
     
 
     # get 10000 hot posts from the MachineLearning subreddit
-    hot_posts = reddit.subreddit('all').hot(limit=10000)
+    hot_posts = reddit.subreddit('science').hot(limit=10000)
     # posts = [i for i in hot_posts]
     # print(len(posts))
 
@@ -56,7 +59,7 @@ if __name__ == "__main__":
         if type(freq_lst) != type(None):
             freq_to_score[str(tuple(freq_lst))] = up
         print(counter)
-        counter +=1
+        counter += 1
 
 
     with open('all_scrape_data.json', 'w') as f:
