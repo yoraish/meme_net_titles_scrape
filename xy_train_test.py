@@ -31,10 +31,10 @@ def generate_groups(all_scrape_data,word_to_ix):
 
     for freq_lst, score in all_scrape_data.items():
         if score != 0:
-            score = round(log(score,12))-1
+            score = round(log(score,4))-2 #### adjust this based on number of samples
 
-            if score > 1:
-                score = 1
+            if score > 2:
+                score = 2
             if score < 0:
                 score = 0
             
